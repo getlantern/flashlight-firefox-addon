@@ -1,0 +1,10 @@
+{
+    "name": "flashlight-cert-installer",
+    "license": "Apache v2",
+    "author": "Team Lantern",
+    "version": "0.1",
+    "fullName": "Lantern Flashlight Certificate Installer",
+    "homepage": "https://github.com/getlantern/flashlight-firefox-addon",
+    "id": "contact@getlantern.org",
+    "description": "Adds flashlight's certificate to Firefox's trusted root certificate store"
+}
