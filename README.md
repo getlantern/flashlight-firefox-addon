@@ -42,7 +42,8 @@ SDK](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Installation).
 1. Set up Firefox to use flashlight as its http proxy (e.g. localhost:10080)
 1. Try loading a page that requires https in Firefox, e.g. https://www.google.com/humans.txt
 1. Observe Firefox shows its "This Connection is Untrusted" page
-1. Locate flashlight's `cacert.pem` file and copy it into this extension's `data/` directory.
+1. Locate flashlight's `cacert.pem` file and copy it into your
+   `~/.lantern/pt/flashlight` directory
 1. Run `cfx xpi` to generate a `flashlight-cert-installer.xpi`
 1. In Firefox, go to File > Open File... and open `flashlight-cert-installer.xpi`
 1. Accept the prompt to install the extension
