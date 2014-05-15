@@ -7,8 +7,19 @@ This add-on adds the flashlight ca cert to the Firefox trusted root store.
 See the [Installation docs for the Mozilla Add-on
 SDK](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Installation).
 
-## Instructions
+## Setup
 
+This repo contains the code for the Flashlight Certificate Installer extension
+as well as the built `flashlight-cert-installer.xpi` target
+resulting from running `cfx xpi`.
+
+[Lantern](https://github.com/getlantern/lantern) includes this repo as a git submodule.
+When Lantern runs, it looks for the flashlight-cert-installer.xpi in this repo
+and ensures it's been installed into the user's Firefox extensions.
+
+## Manual End-to-End Testing
+
+1. Ensure this extension is not yet installed.
 1. Get a local instance of flashlight running in masquerade mode:
 
 ```
@@ -39,14 +50,13 @@ SDK](https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials/Installation).
 2014/05/13 16:44:08 Using cdnjs.com:443 to handle request
 ```
 
-1. Set up Firefox to use flashlight as its http proxy (e.g. localhost:10080)
+1. Set up Firefox to use flashlight as its http(s) proxy (e.g. localhost:10080)
 1. Try loading a page that requires https in Firefox, e.g. https://www.google.com/humans.txt
 1. Observe Firefox shows its "This Connection is Untrusted" page
 1. Locate flashlight's `cacert.pem` file and copy it into your
    `~/.lantern/pt/flashlight` directory
-1. Run `cfx xpi` to generate a `flashlight-cert-installer.xpi`
-1. In Firefox, go to File > Open File... and open `flashlight-cert-installer.xpi`
-1. Accept the prompt to install the extension
+1. Now install this extension
+   (in Firefox, go to File > Open File... and open flashlight-cert-installer.xpi)
 1. Go into Firefox Preferences > Advanced > Certificates > View Certificates > Authorities and you should now see an entry for "Lantern"
 1. Reload the https page from before and it should now load without any certificate errors
 
